@@ -1,5 +1,6 @@
 #include <signal.h>
 #include <stdio.h>
+#include <unistd.h>
 int interrupt() {
 printf("Interrupt called\n"); 
 sleep(3);
