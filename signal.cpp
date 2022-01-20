@@ -3,7 +3,7 @@
 #include <unistd.h>
 void interrupt(int a) {
 printf("Interrupt called\n"); 
-sleep(3);
+sleep(5);
 printf("Interrupt Func Ended.\n");
 };
 void catchquit(int b) {
