@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <vector>
 #include <linux/stat.h>
 #define FIFO_FILE "sampleFIFO"
 int main(void) {

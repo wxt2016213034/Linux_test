@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
 #define FIFO_FILE "sampleFIFO"
 int main(int argc, char *argv[]) {
 FILE *fp;
