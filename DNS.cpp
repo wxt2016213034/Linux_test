@@ -10,7 +10,7 @@ struct hostent *h;
 /* 检测命令行中的参数是否存在 */
 if (argc != 2){
 /* 如果没有参数，给出使用方法 */ 
-fprintf (stderr"usage: getip address\n");
+fprintf (stderr,"usage: getip address\n");
 /* 然后退出 */
 exit(1);
 }
