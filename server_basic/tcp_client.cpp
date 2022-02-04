@@ -8,8 +8,6 @@
 int main(int argc, char *argv[])
 {
 unsigned short port = 8888;
-// unsigned short port = 8000;
-// char *server_ip = "8.140.133.32";
 char *server_ip = "127.0.0.1";
 if(argc > 1)
 {
