@@ -64,21 +64,23 @@ int main(){
                 }
                 char buf[512];
                 int len = 0;
-                while((len = read(curfd,(void *)&buf,sizeof(buf))) > 0){
-                    std::cout<<buf<<std::endl;
-                    send(curfd,(void *)buf,sizeof(buf),0);
-                }
-                if(len == -1){
-                    if(errno == EAGAIN){
-                        std::cout<<"over"<<std::endl;
+                while(1){
+                    len = read(curfd,(void *)&buf,sizeof(buf))
+                    if(len == -1){
+                        if(errno == EAGAIN){
+                            std::cout<<"over"<<std::endl;
+                        }else{
+                            perror("read");
+                            exit(-1);
+                        }
+                    }else if(len == 0){
+                        std::cout<<"close.."<<std::endl;
+                        epoll_ctl(epfd,EPOLL_CTL_DEL,curfd,NULL);
+                        close(curfd);
                     }else{
-                        perror("read");
-                        exit(-1);
+                        std::cout<<buf<<std::endl;
+                        send(curfd,(void *)buf,sizeof(buf),0);
                     }
-                }else if(len == 0){
-                    std::cout<<"close.."<<std::endl;
-                    epoll_ctl(epfd,EPOLL_CTL_DEL,curfd,NULL);
-                    close(curfd);
                 }
 
             }
