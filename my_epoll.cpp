@@ -44,7 +44,7 @@ int main(){
             exit(-1);
         }
 
-        std::cout<<"retfd:"<<ret>>std::endl;
+        std::cout<<"retfd:"<<ret<<std::endl;
 
         for(int i = 0; i < ret; ++i){
             int curfd = epevs[i].data.fd;
