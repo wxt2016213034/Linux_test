@@ -65,10 +65,11 @@ int main(){
                 char buf[512];
                 int len = 0;
                 while(1){
-                    len = read(curfd,(void *)&buf,sizeof(buf))
+                    len = read(curfd,(void *)&buf,sizeof(buf));
                     if(len == -1){
                         if(errno == EAGAIN){
                             std::cout<<"over"<<std::endl;
+                            break;
                         }else{
                             perror("read");
                             exit(-1);

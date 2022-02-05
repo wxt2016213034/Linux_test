@@ -51,7 +51,7 @@ int main() {
                 // 监听的文件描述符有数据达到，有客户端连接
                 struct sockaddr_in cliaddr;
                 int len = sizeof(cliaddr);
-                int cfd = accept(lfd, (struct sockaddr *)&cliaddr, &len);
+                int cfd = accept(lfd, (struct sockaddr *)&cliaddr, (socklen_t *)&len);
 
                 // 设置cfd属性非阻塞
                 int flag = fcntl(cfd, F_GETFL);
