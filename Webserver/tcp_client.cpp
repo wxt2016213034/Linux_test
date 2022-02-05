@@ -45,5 +45,6 @@ int main(){
         recv(connectfd, recvbuf, sizeof(recvbuf),0);
         printf("recv %s\n",recvbuf);
     }
+    close(connectfd);
     return 0;
 }
