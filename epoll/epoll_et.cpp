@@ -62,11 +62,11 @@ int main(){
                 if(epevs[i].events & EPOLLOUT){
                     continue;
                 }
-                char buf[128];
+                char buf[512];
                 int len = 0;
                 while((len = read(curfd,(void *)&buf,sizeof(buf))) > 0){
-                    write(STDOUT_FILENO, buf, len);
-                    // std::cout<<buf<<std::endl;
+                    // write(STDOUT_FILENO, buf, len);
+                    std::cout<<buf<<std::endl;
                     send(curfd,(void *)buf,sizeof(buf),0);
                 }
                 if(len == -1){
