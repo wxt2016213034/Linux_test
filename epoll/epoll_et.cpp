@@ -51,9 +51,9 @@ int main(){
                 int client_fd = accept(fd, (struct sockaddr*)&client_addr,(socklen_t *)&size_client);
 
 
-                int flag = fcntl(client_fd,F_GETFL);
-                flag | O_NONBLOCK;
-                fcntl(client_fd,F_SETFL,flag);
+                // int flag = fcntl(client_fd,F_GETFL);
+                // flag | O_NONBLOCK;
+                // fcntl(client_fd,F_SETFL,flag);
 
                 epev.events = EPOLLIN | EPOLLET;
                 epev.data.fd = client_fd;
