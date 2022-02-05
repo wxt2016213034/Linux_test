@@ -59,7 +59,7 @@ int main(){
                     continue;
                 }
                 char buf[512];
-                int len = read(client_fd,(void *)&buf,sizeof(buf));
+                int len = read(curfd,(void *)&buf,sizeof(buf));
                 if(len == -1){
                     perror("read");
                     exit(-1);
