@@ -52,7 +52,7 @@ int main(){
 
 
                 int flag = fcntl(client_fd,F_GETFL);
-                flag &= ~O_NONBLOCK;
+                flag |= O_NONBLOCK;
                 fcntl(client_fd,F_SETFL,flag);
 
                 epev.events = EPOLLIN | EPOLLET;
