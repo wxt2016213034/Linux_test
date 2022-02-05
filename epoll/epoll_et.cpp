@@ -1,12 +1,13 @@
 #include <stdio.h>
-#include <netinet/in.h>
-#include <sys/socket.h>
+#include <arpa/inet.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
 #include <iostream>
 #include <sys/epoll.h>
 #include <errno.h>
+#include <fcntl.h>
+
 int main(){
 
     int fd = socket(AF_INET,SOCK_STREAM,0);
@@ -30,11 +31,6 @@ int main(){
     epoll_ctl(epfd,EPOLL_CTL_ADD, fd, &epev);
 
     struct epoll_event epevs[1024];
-
-    // struct sockaddr_in client_addr;
-    // int size_client = sizeof(client_addr);
-    // int client_fd = accept(fd, (struct sockaddr*)&client_addr,(socklen_t *)&size_client);
-
     while(1){
 
         int ret = epoll_wait(epfd,epevs,1024,-1);
