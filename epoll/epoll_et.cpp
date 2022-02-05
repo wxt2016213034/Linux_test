@@ -62,7 +62,7 @@ int main(){
                 if(epevs[i].events & EPOLLOUT){
                     continue;
                 }
-                char buf[5];
+                char buf[128];
                 int len = 0;
                 while((len = read(curfd,(void *)&buf,sizeof(buf))) > 0){
                     write(STDOUT_FILENO, buf, len);
