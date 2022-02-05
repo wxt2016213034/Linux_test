@@ -57,6 +57,7 @@ int main(){
                 epev.data.fd = client_fd;
                 epoll_ctl(epfd,EPOLL_CTL_ADD, client_fd, &epev);
             }else{
+                sleep(1);
                 if(epevs[i].events & EPOLLOUT){
                     continue;
                 }
