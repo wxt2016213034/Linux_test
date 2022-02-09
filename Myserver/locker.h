@@ -4,6 +4,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <exception>
+#include <pthread.h>
 #include <semaphore.h>
 
 // 线程同步机制封装类
