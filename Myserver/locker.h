@@ -4,7 +4,6 @@
 #include <mutex>
 #include <condition_variable>
 #include <exception>
-#include <pthread.h>
 #include <semaphore.h>
 
 // 线程同步机制封装类
@@ -19,7 +18,7 @@ class locker{
         bool lock();
         bool unlock();
 
-        std::mutex *get();
+        std::mutex& get();
 
     private:
 

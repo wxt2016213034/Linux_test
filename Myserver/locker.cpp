@@ -15,8 +15,16 @@ bool locker::unlock(){
     return true;
 }
 
-std::mutex* locker::get(){
-    return &m_mutex;
+std::mutex& locker::get(){
+    return m_mutex;
+}
+
+condVar::condVar(){
+
+}
+
+condVar::~condVar(){
+    
 }
 
 bool condVar::wait(std::mutex &m_mutex){

@@ -19,4 +19,5 @@ int main(){
     temp.append(&t2);
     temp.append(&t3);
     temp.append(&t4);
+    while(1);
 }
