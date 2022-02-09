@@ -47,9 +47,7 @@ m_thread_number(thread_number), m_max_requests(max_requests),m_stop(false), m_th
     if(thread_number<0 || max_requests <0){
         throw std::exception();
     }
-
     this->m_threads = new std::thread[m_thread_number];
-
     if(!this->m_threads){
         throw std::exception();
     }
