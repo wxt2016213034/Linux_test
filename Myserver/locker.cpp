@@ -19,38 +19,38 @@ std::mutex& locker::get(){
     return m_mutex;
 }
 
-condVar::condVar(){
+// condVar::condVar(){
 
-}
+// }
 
-condVar::~condVar(){
+// condVar::~condVar(){
     
-}
+// }
 
-bool condVar::wait(std::mutex &m_mutex){
-    std::unique_lock<std::mutex> temp(m_mutex);
-    this->my_condVar.wait(temp);
-    return true;
-}
-
-
-bool condVar::timewait(std::mutex &m_mutex,int time){
-    std::unique_lock<std::mutex> temp(m_mutex);
-    this->my_condVar.wait_for(temp,std::chrono::seconds(time));
-    return true;
-
-}
+// bool condVar::wait(std::mutex &m_mutex){
+//     std::unique_lock<std::mutex> temp(m_mutex);
+//     this->my_condVar.wait(temp);
+//     return true;
+// }
 
 
-bool condVar::notify_one(){
-    this->my_condVar.notify_one();
-    return true;
+// bool condVar::timewait(std::mutex &m_mutex,int time){
+//     std::unique_lock<std::mutex> temp(m_mutex);
+//     this->my_condVar.wait_for(temp,std::chrono::seconds(time));
+//     return true;
 
-}
+// }
 
 
-bool condVar::notify_all(){
-    this->my_condVar.notify_all();
-    return true;
+// bool condVar::notify_one(){
+//     this->my_condVar.notify_one();
+//     return true;
 
-}
+// }
+
+
+// bool condVar::notify_all(){
+//     this->my_condVar.notify_all();
+//     return true;
+
+// }

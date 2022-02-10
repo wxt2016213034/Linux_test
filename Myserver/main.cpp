@@ -1,23 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
-#include "locker.h"
+#include <string.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <sys/epoll.h>
 #include "threadPool.h"
-using namespace std;
-class request{
-    public:
-        void process(){
-            cout<<"work"<<endl;
-        }
-};
+#include "locker.h"
 
-int main(){
-    request t1;
-    request t2;
-    request t3;
-    request t4;
-    threadpool<request> temp;
-    temp.append(&t1);
-    temp.append(&t2);
-    temp.append(&t3);
-    temp.append(&t4);
-    while(1);
+int main(int argc, char * argv[]){
+    if(argc <= 1){
+        std::cout<<"Please enter port_number"<<endl;
+        exit(-1);
+    }
+    int port = atoi(argv[1]);
+    
 }

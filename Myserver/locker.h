@@ -26,21 +26,21 @@ class locker{
 };
 
 
-//条件变量类
-class condVar{
-    public:
-        condVar();
-        ~condVar();
+// //条件变量类
+// class condVar{
+//     public:
+//         condVar();
+//         ~condVar();
 
-        bool wait(std::mutex &m_mutex);
-        bool timewait(std::mutex &m_mutex, int time);
+//         bool wait(std::mutex &m_mutex);
+//         bool timewait(std::mutex &m_mutex, int time);
 
-        bool notify_one();
-        bool notify_all();
+//         bool notify_one();
+//         bool notify_all();
 
-    private:
-        std::condition_variable my_condVar;
-};
+//     private:
+//         std::condition_variable my_condVar;
+// };
 
 // 信号量类
 class sem {
