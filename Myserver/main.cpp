@@ -13,9 +13,9 @@
 
 int main(int argc, char * argv[]){
     if(argc <= 1){
-        std::cout<<"Please enter port_number"<<endl;
+        std::cout<<"Please enter port_number"<<std::endl;
         exit(-1);
     }
     int port = atoi(argv[1]);
-    
+
 }
