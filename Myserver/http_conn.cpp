@@ -40,7 +40,7 @@ void removefd( int epollfd, int fd ) {
 void modfd(int epollfd, int fd, int ev) {
     epoll_event event;
     event.data.fd = fd;
-    event.events = ev | EPOLLONESHOT | EPOLLRDHUP;
+    event.events = ev | EPOLLET | EPOLLONESHOT | EPOLLRDHUP;
     epoll_ctl( epollfd, EPOLL_CTL_MOD, fd, &event );
 }
 

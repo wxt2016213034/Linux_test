@@ -60,6 +60,7 @@ public:
     }
     // 等待信号量
     bool wait() {
+        std::cout<<"wait"<<endl;
         return sem_wait( &m_sem ) == 0;
     }
     // 增加信号量
