@@ -87,7 +87,7 @@ int main(int argc, char * argv[]){
 
     while(true){
         int number = epoll_wait( epollfd, events, MAX_EVENT_NUMBER, -1);
-        if((number < 0) && (error != EINTR)){// EINTR 中断
+        if((number < 0) && (errno != EINTR)){// EINTR 中断
             std::cout<<"epoll failure"<<std::endl;
             break;
         }
