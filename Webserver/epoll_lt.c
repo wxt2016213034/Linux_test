@@ -48,7 +48,7 @@ int main() {
             if(curfd == lfd) {
                 // 监听的文件描述符有数据达到，有客户端连接
                 struct sockaddr_in cliaddr;
-                int len = sizeof(cliaddr);
+                socklen_t len = sizeof(cliaddr);
                 int cfd = accept(lfd, (struct sockaddr *)&cliaddr, &len);
 
                 epev.events = EPOLLIN;
