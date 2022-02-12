@@ -58,7 +58,7 @@ void http_conn::init(int sockfd, const sockaddr_in &addr){
     // 端口复用
     int reuse = 1;
     setsockopt( m_sockfd, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof( reuse ) );
-    addfd( m_epollfd, sockfd, true );//添加到epoll对象中
+    addfd( m_epollfd, sockfd, false );//添加到epoll对象中
     m_user_count++;
     // init();
 }
