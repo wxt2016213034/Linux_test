@@ -15,7 +15,7 @@
 
 
 const int MAX_FD = 65535; //最大文件描述符个数
-const int MAX_EVENT_NUMBER = 10000 // 监听的最大的事件数量
+const int MAX_EVENT_NUMBER = 10000; // 监听的最大的事件数量
 
 
 
