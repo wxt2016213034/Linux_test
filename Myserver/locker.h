@@ -5,6 +5,7 @@
 #include <condition_variable>
 #include <exception>
 #include <semaphore.h>
+#include <iostream>
 
 // 线程同步机制封装类
 
@@ -60,7 +61,7 @@ public:
     }
     // 等待信号量
     bool wait() {
-        std::cout<<"wait"<<endl;
+        std::cout<<"wait"<<std::endl;
         return sem_wait( &m_sem ) == 0;
     }
     // 增加信号量
