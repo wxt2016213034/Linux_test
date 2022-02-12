@@ -42,7 +42,7 @@ class locker{
 //         std::condition_variable my_condVar;
 // };
 
-// 信号量类
+// 信号量类,大于1时不互斥
 class sem {
 public:
     sem() {
