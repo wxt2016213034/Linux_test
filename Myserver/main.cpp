@@ -15,7 +15,7 @@
 
 
 const int MAX_FD = 65535; //最大文件描述符个数
-const int MAX_EVENT_NUMBER 10000 // 监听的最大的事件数量
+const int MAX_EVENT_NUMBER = 10000 // 监听的最大的事件数量
 
 
 
@@ -48,7 +48,7 @@ int main(int argc, char * argv[]){
     threadpool<http_conn> *pool = nullptr;
     try
     {
-        poll = new threadpool<http_conn>();
+        pool = new threadpool<http_conn>();
     }
     catch(const std::exception& e)
     {
@@ -69,7 +69,7 @@ int main(int argc, char * argv[]){
     struct sockaddr_in address;
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
-    address.sin_port = htos(port);
+    address.sin_port = htons(port);
     bind(listenfd, (struct sockaddr*)&address, sizeof(address));
 
 
@@ -80,7 +80,7 @@ int main(int argc, char * argv[]){
 
     //创建epoll对象,第二个参数没啥用，但要大于0
     epoll_event events[MAX_EVENT_NUMBER];
-    int epollfd = epoll_creat(5);
+    int epollfd = epoll_create(5);
 
     addfd(epollfd, listenfd, false);
     http_conn::m_epollfd = epollfd;
