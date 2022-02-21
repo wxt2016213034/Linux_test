@@ -2,6 +2,7 @@
 #include <semaphore.h>
 #include <iostream>
 #include <thread>
+#include <queue>
 int a = 0;
 sem_t m_sem;
 
